@@ -15,4 +15,8 @@ tmp/*
 # Ignore all .DS_Store files
 .DS_Store
 
-infra/.terraform*
+infra/.terraform/providers/registry.terraform.io/hashicorp/aws/4.67.0/linux_amd64/terraform-provider-aws_v4.67.0_x5
+infra/.terraform/providers/registry.terraform.io/hashicorp/aws/5.47.0/linux_amd64/terraform-provider-aws_v5.47.0_x5
+infra/terraform.tfstate.backup
+infra/terraform.tfstate
+infra/.terraform.lock.hcl
