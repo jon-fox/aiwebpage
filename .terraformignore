@@ -1,0 +1,16 @@
+# .terraformignore
+
+# Ignore all files in the .git directory
+.git/*
+
+# Ignore all .tfstate files
+*.tfstate
+
+# Ignore all .tfstate.backup files
+*.tfstate.backup
+
+# Ignore all files in the tmp directory
+tmp/*
+
+# Ignore all .DS_Store files
+.DS_Store
