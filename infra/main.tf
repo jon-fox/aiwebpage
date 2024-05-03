@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "general_storage_bucket" {
-  bucket = "general-storage-bucket"
+  bucket = "general-87653-storage-bucket-uuid-876512"
 
   tags = {
     Name        = "My bucket"
@@ -45,28 +45,21 @@ resource "aws_s3_bucket_versioning" "versioning" {
   }
 }
 
-resource "aws_s3_bucket_policy" "bucket_policy" {
-    bucket = aws_s3_bucket.general_storage_bucket.id
+# resource "aws_s3_bucket_policy" "bucket_policy" {
+#     bucket = aws_s3_bucket.general_storage_bucket.id
 
-    policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "RestrictToIAMAdminUser",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    "arn:aws:iam::891377252563:user/iamadmin"
-                ]
-            },
-            "Action": [
-                "s3:GetObject",
-                "s3:ListBucket"
-            ],
-            "Resource": "arn:aws:s3:::${aws_s3_bucket.general_storage_bucket.id}/*"
-        }
-    ]
-}
-EOF
-}
+#     policy = <<EOF
+#     {
+#     "Version":"2012-10-17",
+#     "Statement":[
+#         {
+#         "Sid":"PublicRead",
+#         "Effect":"Allow",
+#         "Principal": "*",
+#         "Action":["s3:GetObject"],
+#         "Resource":["arn:aws:s3:::${aws_s3_bucket.general_storage_bucket.id}/*"]
+#         }
+#     ]
+#     }
+# EOF
+# }
